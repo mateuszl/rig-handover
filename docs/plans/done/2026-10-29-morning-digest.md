@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-01
 ---
 
 # Morning digest
@@ -77,3 +78,17 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader | — | claude-code · opus-5.5 · default | 2026-11-01 |
+| 2 | Digest page | #1 | claude-code · haiku-5.5 · default | 2026-11-01 |
+| 3 | Digest JSON | #1 | claude-code · haiku-5.5 · default | 2026-11-01 |
+| 4 | Board link | #1 | claude-code · haiku-5.5 · default | 2026-11-01 |
+| 5 | Route tests | #1, #2, #3 | claude-code · haiku-5.5 · default | 2026-11-01 |
+| 6 | Preview for review | #2, #3, #4, #5 | claude-code · opus-5.5 · default | 2026-11-01 |
+| 7 | Clean up the preview | #6 | claude-code · opus-5.5 · default | 2026-11-01 |
+
+The preview link lost its lane marker on 2026-11-01, once the review was in. See ADR 0003.
