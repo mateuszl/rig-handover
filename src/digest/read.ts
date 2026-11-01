@@ -32,6 +32,7 @@ function addLine(row: DigestRow | undefined, line: Line): DigestRow {
       owner: line.owner,
       runs: 1,
       retries: line.status === 'retry' ? 1 : 0,
+      fails: line.status === 'fail' ? 1 : 0,
       lastStatus: line.status,
       lastError: line.error,
       firstAt: line.at,
@@ -40,6 +41,7 @@ function addLine(row: DigestRow | undefined, line: Line): DigestRow {
   }
   row.runs += 1;
   if (line.status === 'retry') row.retries += 1;
+  if (line.status === 'fail') row.fails += 1;
   if (Date.parse(line.at) < Date.parse(row.firstAt)) row.firstAt = line.at;
   if (Date.parse(line.at) >= Date.parse(row.lastAt)) {
     row.lastAt = line.at;
